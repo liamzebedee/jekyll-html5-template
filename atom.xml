@@ -1,0 +1,32 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+<id>urn:uuid:{{ page.uuid }}</id>
+<title>{{ site.title }}</title>
+<subtitle>{{ site.description }}</subtitle>
+<updated>{{ site.time | date: "%Y-%m-%dT%H:%M:%SZ" }}</updated>
+<link type="text/html" href="{{ site.host }}"/>
+<icon>/assets/icon.png</icon>
+{% if site.rights %}
+<rights>{{ site.rights }}</rights>
+{% endif %}
+
+{% for post in site.posts %}
+<entry>
+	<title>{{ post.title }}</title>
+	<id>urn:uuid:{{ post.uuid }}</id>
+	<link rel="alternate" type="text/html" href="{{ site.host }}{{ post.url }}"/>
+	<updated>{{ post.date_updated | date: "%Y-%m-%dT%H:%M:%SZ" }}</updated>
+	<published>{{ post.date | date: "%Y-%m-%dT%H:%M:%SZ" }}</published>
+	<summary>{% if page.description %} {{ page.description }} {% endif %}</summary>
+	{% for category in post.categories %}
+		<category term="{{ category | downcase }}" />
+	{% endfor %}
+	<content type="html">{{ post.content | xml_escape }}</content>
+</entry>
+{% endfor %}
+
+</feed>

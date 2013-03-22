@@ -1,0 +1,31 @@
+<article>
+	<header>
+		{% if page.categories %}
+		<ul class="categories">
+			{% for category in page.categories %}
+			<li>{{ category }}
+			{% endfor %}
+		</ul>
+		{% endif %}
+		
+		{% if page.tags %}
+		<ul class="tags">
+			{% for tag in page.tags %}
+			<li>{{ tag }}
+			{% endfor %}
+		</ul>
+		{% endif %}
+		
+		<time datetime="{{ page.date | date: "%Y-%m-%dT%H:%M:%SZ" }}" pubdate>Posted on {{ page.date | date: "%B %d, %Y" }}</time>
+	</header>
+	
+	<h1>{{ page.title }}</h1>
+	<div class="content">{{ page.content }}</div>
+	
+	<footer>
+		<nav>
+			{% if page.prev %}<li><a href="{{ page.prev.url }}" rel="prev">Previous Post</a>{% endif %}
+			{% if page.next %}<li><a href="{{ page.next.url }}" rel="next">Next Post</a>{% endif %}
+		</nav>
+	</footer>
+</article>

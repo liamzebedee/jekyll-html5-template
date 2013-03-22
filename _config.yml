@@ -1,0 +1,11 @@
+# Title of site, to appear in atom feed
+title: "5plate - HTML5 Boilerplate for Jekyll"
+
+# Server
+host: "example.com"
+
+# Description for <meta> and atom feed
+description: "We do stuff."
+
+# License/Copyright information
+rights: "Copyright Some Guy 2013"

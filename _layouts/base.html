@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<div id="page">
+
+<article id="content" {% if page.schema %} itemscope itemtype="http://schema.org/{{ page.schema }}" {% endif %}>
+{{ content }}
+</article>
+
+</div>

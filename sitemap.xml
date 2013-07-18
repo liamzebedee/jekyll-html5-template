@@ -27,8 +27,8 @@ layout: nil
 	{% for page in site.pages %}
 	<url>
 		<loc>http://{{ site.host }}{{ page.url }}</loc>
-		{% if page.last_updated %}
-		<lastmod>{{ page.last_updated | date: "%Y-%m-%d" }}</lastmod>
+		{% if page.lastmod %}
+		<lastmod>{{ page.lastmod | date: "%Y-%m-%d" }}</lastmod>
 		{% elsif page.date %}
 		<lastmod>{{ page.date | date: "%Y-%m-%d" }}</lastmod>
 		{% else %}

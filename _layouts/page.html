@@ -1,0 +1,13 @@
+---
+layout: base
+htmlClass: post
+---
+<header>
+	Last updated <time class="timeago" datetime="{{ page.lastmod }}" pubdate itemprop="dateModified"></time>
+	
+	<h1 itemprop="headline">{{ page.title }}</h1>	
+</header>
+
+<div itemprop="articleBody">
+{{ content }}
+</div>

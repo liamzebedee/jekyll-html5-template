@@ -1,0 +1,27 @@
+---
+title: RSS Feed.
+layout: nil
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+
+<title>{{ site.title | replace:"&nbsp;",' ' }}</title>
+<description>{{ site.description | replace:"&nbsp;",' ' }}</description>
+<link>http://{{ site.siteurl }}</link>
+<lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+<language>en</language>
+
+{% for post in site.posts %}
+<item>
+	<title>{{ post.title }}</title>
+	<link>http://{{ site.siteurl }}{{ post.url }}</link>
+	<guid>{{ post.id }}</guid>
+	<pubDate>{{ post.date | date: date_to_rfc822 }}</pubDate>
+	<description>{{ post.excerpt | markdownify | strip_html }}</description>
+	<category>{{ post.category }}, {{ post.tag }}</category>
+</item>
+{% endfor %}
+
+</channel>
+</rss>

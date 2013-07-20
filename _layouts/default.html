@@ -38,7 +38,7 @@
 	{% if page.description %}
 		{% capture description %}{{ page.description }}{% endcapture %}
 	{% else if page.excerpt %}
-		{% capture description %}{{ page.excerpt | strip_html | markdownify }}{% endcapture %}
+		{% capture description %}{{ page.excerpt | markdownify | strip_html }}{% endcapture %}
 	{% else %}
 		{% capture description %}{{ site.description }}{% endcapture %}
 	{% endif %}

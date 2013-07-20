@@ -15,10 +15,7 @@ The features it has are what I think are the essentials:
 * Sitemap.
 
 ## How to use
-1. Clone the repository. 
-
-   > git clone https://github.com/liamzebedee/jekyll-html5-template
-
+1. Fork the repository, as described [here](https://help.github.com/articles/fork-a-repo)
 2. Modify the variables in `_config.yml` to suit your site.
 3. Generate using Jekyll and start building your own site!
 
